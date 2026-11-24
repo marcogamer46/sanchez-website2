@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects · BenchLab Mindanao</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="nav-wrap">
+      <a class="logo" href="index.html">Bench<span>Lab</span></a>
+      <nav>
+        <a href="projects.html">Projects</a>
+        <a href="workshops.html">Workshops</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container">
+        <h1>Projects</h1>
+        <p>Example capstones with parts, wiring, and code overview. Prices are samples.</p>
+        <div class="box" id="plant">
+          <h2>Smart Plant Watering System</h2>
+          <p><em>Arduino Uno</em></p>
+          <p><strong>Problem:</strong> Plants get overwatered or forgotten. This waters only when the soil is dry.</p>
+          <p><strong>Parts:</strong> Arduino Uno (₱450), soil moisture sensor (₱60), 5V relay (₱70), mini pump (₱120), wires and breadboard (₱100).</p>
+          <pre>Sensor AO -> A0
+Relay IN  -> D7
+Pump -> relay, own 5V supply (not the Arduino 5V pin)</pre>
+          <p><strong>Code:</strong> Read A0 every second. If the soil is dry, run the pump for 3 seconds, then wait 30 seconds.</p>
+          <p><strong>Results:</strong> Tested on a potted plant for 7 days. The soil stayed moist.</p>
+        </div>
+        <div class="box" id="door">
+          <h2>RFID Door Lock</h2>
+          <p><em>Arduino Uno</em></p>
+          <p><strong>Problem:</strong> Keys get lost and shared. Each user gets their own card instead.</p>
+          <p><strong>Parts:</strong> Arduino Uno (₱450), RC522 module + cards (₱150), SG90 servo (₱90), buzzer (₱20), wires (₱50).</p>
+          <pre>RC522 (3.3V only): SDA D10, SCK D13, MOSI D11, MISO D12, RST D9
+Servo signal -> D6</pre>
+          <p><strong>Code:</strong> Read the card UID and compare it to an array of allowed UIDs. Match: servo opens for 3 seconds. No match: three beeps.</p>
+          <p><strong>Results:</strong> Worked on 10 test cards. Read range is about 3 cm.</p>
+        </div>
+        <div class="box" id="weather">
+          <h2>Mini Weather Station</h2>
+          <p><em>ESP32</em></p>
+          <p><strong>Problem:</strong> Cloud IoT is confusing for beginners. This hosts a simple page right on the ESP32.</p>
+          <p><strong>Parts:</strong> ESP32 DevKit (₱350), DHT22 (₱180), 10k resistor (₱2), breadboard and wires (₱100).</p>
+          <pre>DHT22 data -> GPIO 4 (10k pull-up to 3.3V)
+VCC -> 3.3V, GND -> GND</pre>
+          <p><strong>Code:</strong> Connect to Wi-Fi, run a web server on port 80, and show the latest reading on a page that refreshes every 5 seconds.</p>
+          <p><strong>Results:</strong> Within about 1 degree of a store-bought thermometer.</p>
+        </div>
+        <div class="box" id="flood">
+          <h2>Flood Level Alert</h2>
+          <p><em>ESP32</em></p>
+          <p><strong>Problem:</strong> Barangays flood with little warning. This measures the water level and sounds an alarm.</p>
+          <p><strong>Parts:</strong> ESP32 DevKit (₱350), HC-SR04 (₱70), buzzer (₱20), 3 LEDs (₱15), waterproof box (₱120).</p>
+          <pre>TRIG -> GPIO 5
+ECHO -> GPIO 18 (voltage divider, ECHO is 5V)
+Buzzer -> GPIO 23, LEDs -> GPIO 25, 26, 27</pre>
+          <p><strong>Code:</strong> Measure distance to the water every 2 seconds. Green is safe, yellow is warning, red turns on the buzzer.</p>
+          <p><strong>Results:</strong> Accuracy about plus or minus 1 cm in a bucket test. Needs a rain cover.</p>
+        </div>
+        <div class="box" id="linebot">
+          <h2>Line Follower Robot</h2>
+          <p><em>Raspberry Pi Pico</em></p>
+          <p><strong>Problem:</strong> A first robot that teaches sensors, motors, and simple control logic.</p>
+          <p><strong>Parts:</strong> Raspberry Pi Pico (₱250), 2 IR line sensors (₱60), L298N driver (₱120), 2WD chassis (₱350), 4xAA holder (₱40).</p>
+          <pre>Left IR -> GP14, Right IR -> GP15
+L298N IN1-IN4 -> GP2 to GP5
+Motors on the battery pack, grounds joined</pre>
+          <p><strong>Code:</strong> (MicroPython) Left sensor on the line: turn left. Right: turn right. Both: go straight.</p>
+          <p><strong>Results:</strong> Followed a 2 m tape track. Slowing down helped on sharp turns.</p>
+        </div>
+        <div class="box" id="parking">
+          <h2>Smart Parking Slot Monitor</h2>
+          <p><em>Raspberry Pi Pico</em></p>
+          <p><strong>Problem:</strong> Small lots waste drivers' time. This shows how many slots are free at the entrance.</p>
+          <p><strong>Parts:</strong> Raspberry Pi Pico (₱250), 4 IR obstacle sensors (₱120), 0.96 inch OLED (₱180), wires (₱50), box (₱100).</p>
+          <pre>IR sensors -> GP10 to GP13
+OLED SDA -> GP0, SCL -> GP1, power 3.3V</pre>
+          <p><strong>Code:</strong> Check the sensors every half second, count blocked slots, and show "Free: X of 4" on the OLED (ssd1306 library).</p>
+          <p><strong>Results:</strong> Worked with a toy-car demo. Sunlight confused the IR sensors, so shade them.</p>
+        </div>
+        <a class="btn" href="contact.html">Need help with your own project?</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 BenchLab Mindanao · Northern Mindanao, Philippines</p>
+    </div>
+  </footer>
+</body>
+</html>

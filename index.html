@@ -10,37 +10,70 @@
   <header>
     <div class="nav-wrap">
       <a class="logo" href="index.html">Bench<span>Lab</span></a>
+      <nav>
+        <a href="projects.html">Projects</a>
+        <a href="workshops.html">Workshops</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
   </header>
 
   <main>
     <section class="hero">
       <div class="container">
-        <h1>Build your capstone. We'll help you get it working.</h1>
-        <p>BenchLab Mindanao helps IT and engineering students plan, build, and document Arduino, ESP32, and Raspberry Pi Pico projects.</p>
-        <a class="btn" href="mailto:hello@benchlab.example">Book a Consultation</a>
+        <div>
+          <h1>Build your capstone. We'll help you get it working.</h1>
+          <p>BenchLab Mindanao helps IT and engineering students plan, build, and document Arduino, ESP32, and Raspberry Pi Pico projects.</p>
+          <a class="btn" href="contact.html">Book a Consultation</a>
+        </div>
+        <img src="image.png" alt="BenchLab project photo">
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>
+          Email: <a href="mailto:hello@benchlab.example">hello@benchlab.example</a><br>
+          Phone: 09XX XXX XXXX<br>
+          Location: Cagayan de Oro, Northern Mindanao
+        </p>
       </div>
     </section>
 
     <section>
       <div class="container">
         <h2>What we do</h2>
-        <ul>
-          <li><strong>Consultations</strong>  Help with project ideas, parts, and wiring.</li>
-          <li><strong>Circuit &amp; code reviews</strong>  Check circuits and firmware.</li>
-          <li><strong>Workshops</strong>  Learn about sensors, motors, and wireless modules.</li>
-        </ul>
+        <div class="cards">
+          <a href="consultations.html"><b>Consultations</b>Help with project ideas, parts, and wiring.</a>
+          <a href="reviews.html"><b>Circuit &amp; code reviews</b>Check circuits and firmware.</a>
+          <a href="workshops.html"><b>Workshops</b>Learn about sensors, motors, and wireless modules.</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>How it works</h2>
+        <div class="cards">
+          <div><b>1. Plan</b>Pick an idea and list the parts.</div>
+          <div><b>2. Build</b>Wire it, code it, and test it.</div>
+          <div><b>3. Document</b>Write it up for your panel.</div>
+        </div>
       </div>
     </section>
 
     <section>
       <div class="container">
         <h2>Featured projects</h2>
-        <ul>
-          <li><strong>Smart Plant Watering System</strong>  Arduino Uno</li>
-          <li><strong>Flood Level Alert</strong>  ESP32</li>
-          <li><strong>Line Follower Robot</strong>  Raspberry Pi Pico</li>
-        </ul>
+        <div class="cards">
+          <a href="projects.html#plant"><b>Smart Plant Watering System</b>Arduino Uno</a>
+          <a href="projects.html#door"><b>RFID Door Lock</b>Arduino Uno</a>
+          <a href="projects.html#weather"><b>Mini Weather Station</b>ESP32</a>
+          <a href="projects.html#flood"><b>Flood Level Alert</b>ESP32</a>
+          <a href="projects.html#linebot"><b>Line Follower Robot</b>Raspberry Pi Pico</a>
+          <a href="projects.html#parking"><b>Smart Parking Slot Monitor</b>Raspberry Pi Pico</a>
+        </div>
       </div>
     </section>
 
@@ -49,6 +82,7 @@
         <h2>Next workshop</h2>
         <p><strong>Intro to Sensors with Arduino</strong><br>
         Sat, Dec 12, 2026 · 9:00 AM – 12:00 PM · Cagayan de Oro</p>
+        <a class="btn" href="workshops.html">See workshops</a>
       </div>
     </section>
   </main>
@@ -56,7 +90,6 @@
   <footer>
     <div class="container">
       <p>© 2026 BenchLab Mindanao · Northern Mindanao, Philippines</p>
-      <p><a href="mailto:hello@benchlab.example">hello@benchlab.example</a></p>
     </div>
   </footer>
 </body>
